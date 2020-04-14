@@ -1,0 +1,24 @@
+version: '3.5'
+
+services:
+
+  reviews_api:
+    build:
+      context: .
+      dockerfile: dockerfile
+    container_name: reviews_api
+    image: docker.ziliplay.com/reviews_api:1.0
+    networks:
+      - api_network
+    volumes:
+      - ./src:/app:rw
+      - ~/spider:/app/static:rw
+    env_file: dev.env
+    tty: true
+
+  #### BEGIN SPIDER SEVERS ####
+
+networks:
+  api_network:
+    external:
+      name: spider_network
