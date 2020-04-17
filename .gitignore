@@ -4,5 +4,6 @@ __pycache__/
 *.py[cod]
 *.egg-info/
 *.egg
+api/
 test/
 test.py

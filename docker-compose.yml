@@ -12,8 +12,11 @@ services:
       - api_network
     volumes:
       - ./src:/app:rw
+      - ~/Documents/api:/app/api:rw
       - ~/spider:/app/static:rw
     env_file: dev.env
+    ports:
+      - "1223:5000"
     tty: true
 
   #### BEGIN SPIDER SEVERS ####
