@@ -7,7 +7,7 @@ services:
       context: .
       dockerfile: dockerfile
     container_name: reviews_api
-    image: docker.ziliplay.com/reviews_api:1.0
+    image: ronhsienchang/reviews_api:latest
     networks:
       - api_network
     volumes:

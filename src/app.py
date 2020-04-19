@@ -3,7 +3,6 @@ from config import Config
 from flask import Flask
 from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
-from flask_bcrypt import Bcrypt
 
 app = Flask(__name__)
 
@@ -19,7 +18,6 @@ spider_rs = redis.StrictRedis(
 
 cors = CORS(app, resources={r"/*": {"origins": "*"}})
 db = SQLAlchemy(app)
-bcrypt = Bcrypt(app)
 
 from controllers.route_controllers import *
 
