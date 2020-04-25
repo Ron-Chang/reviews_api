@@ -28,6 +28,12 @@ def get_ifoodie_results_by_restaurant(query):
     results = SchemaModel.search_restaurant(query=query)
     return ResponseHandler.jsonify(results=results)
 
+## 停車資訊 ##
+@app.route('/parking/<string:restaurant_id>', methods=['GET'])
+def get_ifoodie_parking_info_by_restaurant(restaurant_id):
+    results = SchemaModel.search_parking_info(restaurant_id=restaurant_id)
+    return ResponseHandler.jsonify(results=results)
+
 ## 搜尋地點 ##
 @app.route('/location/<string:query>', methods=['GET'])
 def get_ifoodie_results_by_location(query):

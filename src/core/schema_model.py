@@ -23,3 +23,9 @@ class SchemaModel:
     def search_location(query):
         response = IFoodieApi.search_location(query=query)
         return response
+
+    @staticmethod
+    def search_parking_info(restaurant_id):
+        response = IFoodieApi.get_parking_info(restaurant_id=restaurant_id)
+        return response
+
